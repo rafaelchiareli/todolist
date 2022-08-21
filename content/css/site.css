@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+body {
+    background-color: #FFF5EE;
+    display: flex;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+.painel {
+    position: relative;
+    margin-top: 50px;
+    width: 80vw;
+    height: 80vh;
+    background-color: blue;
+    display: flex;
+
+
+    border-radius: 10px;
+}
+
+.div1 {
+    height: 100%;
+    width: 50%;
+    background-color: #F5FFFA;
+    float: left;
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 10px 0 0 10px;
+}
+
+.div1 img {
+    width: 50px;
+    height: 50px;
+}
+
+
+.div2 {
+    height: 100%;
+    width: 50%;
+    background-color: #E6E6FA;
+    float: right;
+    border-radius: 0 10px 10px 0;
+}
+.div2 img {
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.tituloApp {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    width: 100%;
+    ;
+    align-items: center;
+}
+
+.campos {
+    display: flex;
+    flex-direction: column;
+    width: 84%;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+.conjuntoCampos {
+    display: flex;
+}
+
+.campos2 {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+.campos2 label{
+    margin-bottom: 5px;
+    margin-left: 20px;
+
+}
+.campos label{
+    margin-left: 20px;
+    margin-bottom: 5px;
+
+}
+
+
+.divSomenteAlinhar {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.botao {
+    font-size: 15px;
+    font-family: Arial;
+    width: 140px;
+    height: 50px;
+    border-width: 1px;
+    color: #fff;
+    border-color: rgba(14, 97, 94, 1);
+    font-weight: bold;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    text-shadow: 1px 1px 0px rgba(27, 29, 31, 1);
+    background: rgba(81, 125, 195, 1);
+}
+
+.botao:hover {
+    background: rgba(73, 42, 191, 1)
+}
+
+
+.css-input {
+    border-color: #cccccc;
+    border-style: solid;
+    font-size: 16px;
+    border-width: 1px;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 2px 3px 7px 0px rgba(42, 42, 42, .43);
+}
+
+.css-input:focus {
+    outline: none !important;
+    border:1px solid greenyellow;
+    box-shadow: 0 0 10px #719ECE;
+}
+

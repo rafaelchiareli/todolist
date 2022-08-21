@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="./content/sa2/sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="./content/sa2/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="./content/fa/css/all.css">
+    <link rel="stylesheet" href="./content/bootstrap/css/mdb.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./content/bootstrap/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="./content/css/site.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+
+<body>
+    <div class="painel">
+        <div class="div1">
+            <div class="tituloApp">
+                <img src="./content/images/todo.svg" alt="Logo">
+                <H1>Um simples Todo List</H1>
+            </div>
+
+            <div class="campos">
+                <label>Descrição da Tarefa</label>
+                <input class="css-input" type="text" id="txtTarefa">
+            </div>
+
+            <div class="conjuntoCampos">
+                <div class="campos2">
+                    <label>Data/Hora</label>
+                    <input class="css-input" type="datetime-local" id="txtDataHora">
+                </div>
+                <div class="campos2">
+                    <label>Prioridade</label>
+                    <select class="css-input" id="cboPrioridade">
+                        <option value="" selected>Selecione</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="divSomenteAlinhar">
+                <button type="button" class="botao add-row">Adicionar</button>
+
+            </div>
+        </div>
+
+        <div class="div2">
+            <div class="tituloApp">
+                <img src="./content/images/logo2.svg" alt="Logo">
+                <H1>Minhas Tarefas</H1>
+            </div>
+            <table id="tabela" class="table">
+                <thead>
+                    <th>
+                        Tarefa
+                    </th>
+                    <th>
+                        Data
+                    </th>
+                    <th>
+                        Prioridade
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".add-row").click(function () {
+            var tarefa = $("#txtTarefa").val();
+            var data = $("#txtDataHora").val();
+            var prioriodade = $("#cboPrioridade").val();
+            console.log(tarefa)
+            console.log(data)
+            console.log(prioriodade)
+            if (tarefa == "" || data == "" || prioriodade == "") {
+                Swal.fire(
+                    'Alerta',
+                    'Todos os campos são obrigatórios',
+                    'warning'
+                )
+                return;
+            }
+            var markup = `<tr><td align='center'>${tarefa}</td><td>${data}</td><td>${prioriodade}</td></tr>`;
+            $("#tabela").append(markup);
+
+
+        });
+        $(".delete-row").click(function () {
+            var removeu = false;
+            $("#tbEPI").find('input[name="record"]').each(function () {
+                if ($(this).is(":checked")) {
+                    var $row = $(this).closest("tr");    // Find the row
+                    $(this).parents("tr").remove();
+                    removeu = true;
+                }
+            });
+            if (!removeu) {
+                alert('Selecione ao menos um registro.');
+            }
+        });
+
+    });
+
+</script>
+
+</html>
